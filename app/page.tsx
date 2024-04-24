@@ -5,12 +5,16 @@
 import { Progress } from "@/components/ui/progress"
 import { Card } from "@/components/ui/card"
 import { ResponsiveLine } from "@nivo/line"
+// import {useNavigate} from "react-router-dom";
 
 export default function Component() {
+  // const navigate = useNavigate();
   return (
     <div className="bg-[#1a1a2e] text-white min-h-screen p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <Card className="bg-[#0f3460] rounded-lg p-6 space-y-4">
+        <Card onClick={()=>{
+          window.location.href="/";
+        }} className="bg-[#0f3460] rounded-lg p-6 space-y-4">
           <SlidersIcon className="text-pink-500" />
           <h2 className="text-xl font-bold">Smart ML Algorithms</h2>
           <p>Experience the power of AI in generating unique content.</p>
@@ -20,7 +24,9 @@ export default function Component() {
             <Progress className="w-full" value={85} />
           </div>
         </Card>
-        <Card className="bg-[#0f3460] rounded-lg p-6 space-y-4">
+        <Card onClick={()=>{
+          window.location.href="/inventory";
+        }} className="bg-[#0f3460] rounded-lg p-6 space-y-4">
           <CheckCircleIcon className="text-green-500" />
           <h2 className="text-xl font-bold">Hospital Inventory System</h2>
           <p>Live Inventory Management System for Hospitals & Healthcare Resources</p>
@@ -30,7 +36,9 @@ export default function Component() {
             <Progress className="w-full" value={90} />
           </div>
         </Card>
-        <Card className="bg-[#0f3460] rounded-lg p-6 space-y-4">
+        <Card onClick={()=>{
+          window.location.href="https://mediafiles.botpress.cloud/78cc1fb9-bd65-4867-ae07-41141f35f05f/webchat/bot.html";
+        }} className="bg-[#0f3460] rounded-lg p-6 space-y-4">
           <LightbulbIcon className="text-yellow-500" />
           <h2 className="text-xl font-bold">Symptom to Diseases AI</h2>
           <p>Smart AI Chatbot, predicts Disease based on Symptoms.</p>
@@ -40,7 +48,9 @@ export default function Component() {
             <Progress className="w-full" value={20} />
           </div>
         </Card>
-        <Card className="bg-[#0f3460] rounded-lg p-6 space-y-4">
+        <Card onClick={()=>{
+          window.location.href="/medical-history";
+        }} className="bg-[#0f3460] rounded-lg p-6 space-y-4">
           <SmileIcon className="text-blue-500" />
           <h2 className="text-xl font-bold">Medical History</h2>
           <p>Medical History with eKYC Protection.</p>
@@ -50,13 +60,17 @@ export default function Component() {
             <Progress className="w-full" value={45} />
           </div>
         </Card>
-        <Card className="bg-[#0f3460] rounded-lg p-6 space-y-4">
+        <Card onClick={()=>{
+          window.location.href="/dashboard";
+        }} className="bg-[#0f3460] rounded-lg p-6 space-y-4">
           <BarChartIcon className="text-purple-500" />
           <h2 className="text-xl font-bold">Medical Dashboard</h2>
           <p>Based on trending diagnosis, Dashboard.</p>
           <CurvedlineChart className="w-full h-[200px]" />
         </Card>
-        <Card className="bg-[#0f3460] rounded-lg p-6 space-y-4">
+        <Card onClick={()=>{
+          window.location.href="/";
+        }} className="bg-[#0f3460] rounded-lg p-6 space-y-4">
           <BookOpenIcon className="text-red-500" />
           <h2 className="text-xl font-bold">IoT Monitoring</h2>
           <p>Health Monitoring Device Dashboard.</p>
