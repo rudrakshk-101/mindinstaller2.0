@@ -30,7 +30,7 @@ export function KidneyForm() {
   }
   return (
     <div className="flex justify-center w-[100vw] h-[100vh] bg-gradient-to-br from-gray-400 to-gray-900">
-      <Card className="w-full max-w-3xl scale-90 bg-gradient-to-br from-gray-900 to-gray-400 rounded-lg p-6">
+      <Card className="w-full h-[85vh] max-w-3xl scale-90 bg-gradient-to-br from-gray-900 to-gray-400 rounded-lg ">
         <CardHeader>
           <CardTitle className="text-white">Kidney Diagnosis</CardTitle>
           <CardDescription className="text-white">
