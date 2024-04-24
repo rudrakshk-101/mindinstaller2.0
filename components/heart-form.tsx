@@ -29,8 +29,8 @@ export function HeartForm() {
     localStorage.setItem('diagnosis',data.prediction);
   }
   return (
-    <div className="flex justify-center w-[100vw] h-[100vh] bg-gradient-to-br from-gray-400 to-gray-900">
-      <Card className="w-full max-w-3xl scale-90 bg-gradient-to-br from-gray-900 to-gray-400 rounded-lg p-6">
+    <div className="flex justify-center w-full h-[100%]  bg-gradient-to-br from-gray-400 to-gray-900">
+     <Card className="w-full max-w-3xl  h-full scale-90 bg-gradient-to-br from-gray-900 to-gray-400 rounded-lg p-6">
         <CardHeader>
           <CardTitle className="text-white">Cancer Diagnosis</CardTitle>
           <CardDescription className="text-white">
@@ -38,7 +38,7 @@ export function HeartForm() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-5 gap-2">
             <div className="space-y-2">
               <Label className="text-white" htmlFor="name">
                 Age in Years
@@ -186,6 +186,6 @@ export function HeartForm() {
           <Button onClick={handleSubmit} className="w-full bg-white text-gray-400 hover:bg-gray-900 hover:text-white">Assess Risk</Button>
         </CardContent>
       </Card>
-    </div>
+      </div>
   )
 }
