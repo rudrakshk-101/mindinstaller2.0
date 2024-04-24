@@ -32,7 +32,7 @@ export function HeartForm() {
     <div className="flex justify-center w-full h-[100%]  bg-gradient-to-br from-gray-400 to-gray-900">
      <Card className="w-full max-w-3xl  h-full scale-90 bg-gradient-to-br from-gray-900 to-gray-400 rounded-lg p-6">
         <CardHeader>
-          <CardTitle className="text-white">Cancer Diagnosis</CardTitle>
+          <CardTitle className="text-white">Heart Diagnosis</CardTitle>
           <CardDescription className="text-white">
             Enter the patient's information to assess the risk of Cancer.
           </CardDescription>
