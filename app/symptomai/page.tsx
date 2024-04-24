@@ -4,8 +4,15 @@ export default function Component() {
  return (
   
     <div className="w-full py-6 space-y-6 md:py-12 w-[100vw] h-[100vh]  bg-black">
-      <div className="border-white border-2 w-[20vw] h-[60vh] ml-[75vw] absolute">
-
+      <div className="iframeBorder border-white border-2 w-[20vw] h-[60vh] ml-[75vw] absolute">
+        <iframe
+            src="https://mediafiles.botpress.cloud/78cc1fb9-bd65-4867-ae07-41141f35f05f/webchat/bot.html"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            style={{ border: 'none' }}
+            allow="microphone; camera"
+        ></iframe>
       </div>
       <div>
       <div className="container px-4 md:px-6">
