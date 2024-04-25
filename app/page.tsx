@@ -13,7 +13,7 @@ export default function Component() {
     <div className="bg-[#1a1a2e] text-white min-h-screen p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <Card onClick={()=>{
-          window.location.href="/";
+          window.location.href="/mlmodels";
         }} className="bg-[#0f3460] rounded-lg p-6 space-y-4">
           <SlidersIcon className="text-pink-500" />
           <h2 className="text-xl font-bold">Smart ML Algorithms</h2>
@@ -80,6 +80,7 @@ export default function Component() {
             <Progress className="w-full" value={30} />
           </div>
         </Card>
+        
       </div>
     </div>
   )
