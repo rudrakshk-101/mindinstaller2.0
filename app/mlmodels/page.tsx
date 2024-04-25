@@ -17,7 +17,7 @@ export default function Component() {
             alt="Kidney"
             className="mb-4"
             height={48}
-            src="/placeholder.svg"
+            src="/kidney.png"
             style={{
               aspectRatio: "48/48",
               objectFit: "cover",
@@ -37,7 +37,7 @@ export default function Component() {
             alt="Liver"
             className="mb-4"
             height={48}
-            src="/placeholder.svg"
+            src="/liver.png"
             style={{
               aspectRatio: "48/48",
               objectFit: "cover",
@@ -57,7 +57,7 @@ export default function Component() {
             alt="Cancer"
             className="mb-4"
             height={48}
-            src="/placeholder.svg"
+            src="/cancer.png"
             style={{
               aspectRatio: "48/48",
               objectFit: "cover",
@@ -72,12 +72,12 @@ export default function Component() {
         >
           <img
           onClick={()=>{
-            window.location.href="/diagnosis/malaria";
+            window.location.href="http://127.0.0.1:5001/";
           }}
             alt="Malaria"
             className="mb-4"
             height={48}
-            src="/placeholder.svg"
+            src="/malaria.png"
             style={{
               aspectRatio: "48/48",
               objectFit: "cover",
@@ -97,7 +97,7 @@ export default function Component() {
             alt="Heart"
             className="mb-4"
             height={48}
-            src="/placeholder.svg"
+            src="/heart.png"
             style={{
               aspectRatio: "48/48",
               objectFit: "cover",
@@ -117,7 +117,7 @@ export default function Component() {
             alt="Diabetes"
             className="mb-4"
             height={48}
-            src="/placeholder.svg"
+            src="/diabetes.png"
             style={{
               aspectRatio: "48/48",
               objectFit: "cover",

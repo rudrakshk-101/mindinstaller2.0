@@ -25,7 +25,7 @@ export function HeartForm() {
   const [pcc,setPcc] = useState('');
 
   const handleSubmit = async() => {
-    const response = await fetch('http://127.0.0.1:5000/predictkidney',{
+    const response = await fetch('http://127.0.0.1:5000/predictheart',{
       method: 'POST',
       body: JSON.stringify({
         bp,sg,al,su,rbc,pcc,pc
@@ -36,6 +36,7 @@ export function HeartForm() {
     })
     const data = await response.json();
     localStorage.setItem('diagnosis',data.prediction);
+    window.location.href = '/assesment'
   }
   return (
     <div className="flex justify-center w-full h-full bg-gradient-to-br from-gray-400 to-gray-900">

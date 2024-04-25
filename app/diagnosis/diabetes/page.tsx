@@ -47,7 +47,7 @@ export function DiabetesForm() {
     const data = await response.json();
     if(data.prediction == 0) localStorage.setItem('diagnosis',"Low Risk of Diabetes");
     else localStorage.setItem('diagnosis',"High Risk of Diabetes");
-    
+    window.location.href = '/assesment'
   }
   return (
     <div className="flex justify-center w-[100vw] h-[100vh] bg-gradient-to-br from-gray-400 to-gray-900">

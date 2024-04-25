@@ -46,6 +46,7 @@ export function KidneyForm() {
     })
     const data = await response.json();
     localStorage.setItem('diagnosis',data.prediction);
+    window.location.href = '/assesment'
   }
   return (
     <div className="flex justify-center w-[100vw] h-[100vh] bg-gradient-to-br from-gray-400 to-gray-900">

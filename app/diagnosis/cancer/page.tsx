@@ -17,19 +17,30 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
 export function CancerForm() {
-  const [bp,setBp] = useState('');
-  const [sg,setSg] = useState('');
-  const [al,setAl] = useState('');
-  const [su,setSu] = useState('');
-  const [rbc,setRbc] = useState('');
-  const [pc,setPc] = useState('');
-  const [pcc,setPcc] = useState('');
+  const [clumpThickness, setClumpThickness] = useState("");
+  const [uniformCellSize, setUniformCellSize] = useState("");
+  const [uniformCellShape, setUniformCellShape] = useState("");
+  const [marginalAdhesion, setMarginalAdhesion] = useState("");
+  const [singleEpithelialSize, setSingleEpithelialSize] = useState("");
+  const [bareNuclei, setBareNuclei] = useState("");
+  const [blandChromatin, setBlandChromatin] = useState("");
+  const [normalNucleoli, setNormalNucleoli] = useState("");
+  const [mitoses, setMitoses] = useState("");
+
 
   const handleSubmit = async() => {
-    const response = await fetch('http://127.0.0.1:5000/predictkidney',{
+    const response = await fetch('http://127.0.0.1:5000/predictcancer',{
       method: 'POST',
       body: JSON.stringify({
-        bp,sg,al,su,rbc,pcc,pc
+        "clump_thickness": clumpThickness,
+        "uniform_cell_size": uniformCellSize,
+        "uniform_cell_shape": uniformCellShape,
+        "marginal_adhesion": marginalAdhesion,
+        "single_epithelial_size": singleEpithelialSize,
+        "bare_nuclei": bareNuclei,
+        "bland_chromatin": blandChromatin,
+        "normal_nucleoli": normalNucleoli,
+        "mitoses": mitoses
       }),
       headers: {
         "Content-Type": "application/json"
@@ -37,6 +48,7 @@ export function CancerForm() {
     })
     const data = await response.json();
     localStorage.setItem('diagnosis',data.prediction);
+    window.location.href = '/assesment'
   }
   return (
     <div className="flex justify-center w-[100vw] h-[100vh] bg-gradient-to-br from-gray-400 to-gray-900">
@@ -51,57 +63,67 @@ export function CancerForm() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label className="text-white" htmlFor="name">
+                Name
+              </Label>
+              <Input className="bg-white text-white rounded-md p-2" id="name" placeholder="Name" required />
+            </div>
+            <div className="space-y-2">
+              <Label className="text-white" htmlFor="name">
                 Clump Thickness
               </Label>
-              <Input className="bg-white text-white rounded-md p-2" id="name" placeholder="Clump Thickness" required />
+              <Input value={clumpThickness} onChange={(e)=>{
+                setClumpThickness(e.target.value);
+              }} className="bg-white text-white rounded-md p-2" id="name" placeholder="Clump Thickness" required />
             </div>
             <div className="space-y-2">
               <Label className="text-white" htmlFor="age">
                 Uniform Cell size
               </Label>
-              <Input className="bg-white text-white rounded-md p-2" id="age" placeholder="Uniform Cell size" required />
+              <Input value={uniformCellSize} onChange={(e)=> {
+                setUniformCellSize(e.target.value);
+              }} className="bg-white text-white rounded-md p-2" id="age" placeholder="Uniform Cell size" required />
             </div>
             <div className="space-y-2">
               <Label className="text-white" htmlFor="gender">
                 Uniform Cell shape
               </Label>
-              <Input className="bg-white text-white rounded-md p-2" id="gender" placeholder="Uniform Cell shape" required />
+              <Input value={uniformCellShape} onChange={(e)=> setUniformCellShape(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Uniform Cell shape" required />
             </div>
             <div className="space-y-2">
               <Label className="text-white" htmlFor="symptoms">
                 Marginal Adhesion
               </Label>
-              <Input value={bp} onChange={(e) => setBp(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="BMarginal Adhesion" required />
+              <Input value={marginalAdhesion} onChange={(e) => setMarginalAdhesion(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="BMarginal Adhesion" required />
             </div>
             <div className="space-y-2">
               <Label className="text-white" htmlFor="tests">
                 Single Epithelial Cell Size
               </Label>
-              <Input value={sg} onChange={(e) => setSg(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Single Epithelial Cell Size" required />
+              <Input value={singleEpithelialSize} onChange={(e) => setSingleEpithelialSize(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Single Epithelial Cell Size" required />
             </div>
             <div className="space-y-2">
               <Label className="text-white" htmlFor="tests">
                 Bare Nuclei
               </Label>
-              <Input value={al} onChange={(e) => setAl(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Bare Nuclei" required />
+              <Input value={bareNuclei} onChange={(e) => setBareNuclei(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Bare Nuclei" required />
             </div>
             <div className="space-y-2">
               <Label className="text-white" htmlFor="tests">
                 Bland Chromatin
               </Label>
-              <Input value={su} onChange={(e) => setSu(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Bland Chromatin" required />
+              <Input value={blandChromatin} onChange={(e) => setBlandChromatin(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Bland Chromatin" required />
             </div>
             <div className="space-y-2">
               <Label className="text-white" htmlFor="tests">
               Normal Nucleoli
               </Label>
-              <Input value={su} onChange={(e) => setSu(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Normal Nucleoli" required />
+              <Input value={normalNucleoli} onChange={(e) => setNormalNucleoli(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Normal Nucleoli" required />
             </div>
             <div className="space-y-2">
               <Label className="text-white" htmlFor="tests">
               Mitoses
               </Label>
-              <Input value={su} onChange={(e) => setSu(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Mitoses" required />
+              <Input value={mitoses} onChange={(e) => setMitoses(e.target.value)} className="bg-white text-white rounded-md p-2" id="gender" placeholder="Mitoses" required />
             </div>
             
           </div>
